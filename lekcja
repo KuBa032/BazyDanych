@@ -1,0 +1,15 @@
+show databases;
+create database klasa_4d;
+show databases;
+use klasa_4d;
+create table uczniowie (id_ucznia int not null auto_increment,imie varchar(20) not null, nazwisko varchar(100) not null, nr_w_dzienniku int(2) not null, mezczyzna int(1)  default 1, data_urodzenia date, primary key(id_ucznia),
+unique(nr_w_dzienniku) );
+show tables;
+describe uczniowie;
+insert into uczniowie(imie, nazwisko, nr_w_dzienniku, data_urodzenia) values ( "Jakub", "Krawczyk", 12,"2003-12-24");
+select * from uczniowie;
+alter table uczniowie modify nr_telefonu varchar(15);
+select * from uczniowie;
+alter table uczniowie drop nr_telefonu;
+select * from uczniowie;
+create table przedmioty (id_przedmiotu int not null auto_increment, przedmiot varchar(50) not null,  czas  TIMESTAMP default current_timestamp);
